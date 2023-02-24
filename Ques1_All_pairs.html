@@ -13,7 +13,8 @@
 
         let arr = [1,2,3,4,5,6,7,8,9];
 
-        let n = 6;
+        // let n = 7;
+        let n = prompt("Enter any nuber between 0-9: ");
         let ans = [];
         cehckSum = ()=>{
             for(let i = 0; i<arr.length; i++){
@@ -32,7 +33,7 @@
 
             // console.log("This is my new array : "+ ans[3])
             console.log("This is my new array : "+ ans)
-            document.write("This is my new array : "+ ans.join(" and "))
+            document.write("This array contains the pairs which are equal to given Number : "+ ans.join("  &  "));
         }
         cehckSum();
     </script>
