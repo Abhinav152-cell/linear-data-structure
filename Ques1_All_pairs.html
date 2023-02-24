@@ -17,10 +17,24 @@
         let ans = [];
         cehckSum = ()=>{
             for(let i = 0; i<arr.length; i++){
-                
-                console.log("This is the array"+arr[i]);
+
+                // console.log("This is the array"+arr[i]);
+                // ans[i]=[arr[i],arr[i+1]];
+
+                for(let j = 0; j<arr.length; j++){
+                    // console.log("This is the array"+arr[j]);
+                    if( arr[i]+arr[j] == n){
+                        ans[i] = [ arr[i] , arr[j] ];
+                        break;
+                    }
+                }
             }
+
+            // console.log("This is my new array : "+ ans[3])
+            console.log("This is my new array : "+ ans)
+            document.write("This is my new array : "+ ans.join(" and "))
         }
+        cehckSum();
     </script>
 </body>
 </html>
