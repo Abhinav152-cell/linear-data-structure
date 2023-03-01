@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tower of hanoi</title>
+</head>
+<body>
+    <h1>Read about the Tower of Hanoi algorithm. Write a program to implement it.</h1>
+    <script>
+
+
+        
+const towerOfHanoi = (disk, source, dest, aux) => {
+  if (disk === 1)
+    console.log("Move disk from source ", source, " to destination ", dest);
+  else {
+    towerOfHanoi(disk - 1, source, aux, dest);
+    console.log("Move disk from source ", source, " to destination ", dest);
+    towerOfHanoi(disk - 1, aux, dest, source);
+  }
+};
+towerOfHanoi(4, "A", "B", "C");
+
+
+
+// Basic Stack
+function Stack() {
+  this.items = [];
+
+  // push function
+  this.push = (element) => {
+    // push element into the items
+    this.items.push(element);
+  };
+  // pop function
+  this.pop = () => {
+    if (this.items.length > 0) return this.items.pop();
+  };
+
+  // peek function
+  this.peek = () => {
+    return this.items[this.items.length - 1];
+  };
+
+  // isEmpty function
+  this.isEmpty = () => {
+    return this.items.length === 0;
+  };
+}
+
+function isOperator(x) {
+  switch (x) {
+    case "+":
+    case "-":
+    case "/":
+    case "*":
+      return true;
+  }
+  return false;
+}
+
+    </script>
+</body>
+</html>
