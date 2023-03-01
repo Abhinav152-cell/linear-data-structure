@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1> Write a program to print the first non-repeated character from a string?</h1>
+
+
+    <script>
+
+        let str = "aditysaityls";
+        for ( let i = 0; i<str.length; i++){
+            // console.log(str.indexOf(str.charAt(i)) +" AND "+ str.lastIndexOf(str.charAt(i)));
+            if(str.indexOf(str.charAt(i)) == str.lastIndexOf(str.charAt(i))){
+            console.log(" This is the first non repeated charector for string :" + str +" : "+ str.charAt(i));
+            break;
+        }
+    }
+    </script>
+</body>
+</html>
