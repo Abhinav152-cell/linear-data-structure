@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1>Q9. Write a program to reverse a stack.</h1>
+
+    <script>
+
+var stack = new Stack();
+
+function insertAtBottom(x) {
+  if (stack.isEmpty()) stack.push(x);
+  else {
+    let a = stack.pop();
+    insertAtBottom(x);
+    stack.push(a);
+  }
+}
+function reverseStack() {
+  if (stack.items.length > 0) {
+    let x = stack.pop();
+    reverseStack();
+    insertAtBottom(x);
+  }
+}
+stack.push(1);
+stack.push(2);
+stack.push(3);
+stack.push(4);
+stack.push(5);
+stack.push(6);
+stack.push(7);
+stack.push(8);
+
+console.log("Original Stack");
+
+console.log(stack.items);
+
+reverseStack();
+
+console.log("Reversed Stack");
+
+console.log(stack.items);
+    </script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1>Write a program to check if all the brackets are closed in a given code snippet.</h1>
+    <script>
+        function checkBrackets(expr) {
+  var stack = new Stack();
+  for (let i = 0; i < expr.length; i++) {
+    let x = expr[i];
+
+    if (x === "(" || x === "[" || x === "{") {
+      stack.push(x);
+      continue;
+    }
+    if (stack.isEmpty()) return false;
+
+    let arg;
+    switch (x) {
+      case ")":
+        arg = stack.pop();
+        if (arg === "{" || arg === "[") return false;
+        break;
+      case "}":
+        arg = stack.pop();
+        if (arg === "(" || arg === "[") return false;
+        break;
+      case "]":
+        arg = stack.pop();
+        if (arg === "(" || arg === "{") return false;
+        break;
+    }
+  }
+  return stack.isEmpty();
+}
+
+let expr = "(((({{{}}}][][][]))))";
+
+if (checkBrackets(expr)) console.log("Balanced ");
+else console.log("Not Balanced ");
+
+    </script>
+</body>
+</html>
