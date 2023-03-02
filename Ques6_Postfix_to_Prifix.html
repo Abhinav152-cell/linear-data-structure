@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Read about infix, prefix, and postfix expressions. Write a program to convert postfix to prefix expression.</h1>
+
+    <script>
+
+function postToPre(post_exp) {
+
+let stack = new Stack();
+let length = post_exp.length;
+for (let i = 0; i < length; i += 1) {
+  if (isOperator(post_exp[i])) {
+    let op1 = stack.pop();
+    let op2 = stack.pop();
+    let temp = post_exp[i] + op2 + op1;
+    stack.push(temp);
+  } else {
+    stack.push(post_exp[i] + "");
+  }
+}
+let ans = "";
+while (stack.items.length > 0) ans += stack.pop();
+return ans;
+}
+
+let post_exp = "abc/+xy*k-/";
+console.log("Prefix : " + postToPre(post_exp));
+    </script>
+</body>
+</html>
